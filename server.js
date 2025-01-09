@@ -13,6 +13,19 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 const app = express();
 
+//handle CORS
+const allowedOrigins = ['null'];
+
+app.use((req, res, next) => {
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+        res.setHeader('Access-Control-Allow-Origin', origin);
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    }
+    next();
+});
+
+
 
 //this app is hosted on glitch which puts projects to sleep as a default
 //wakes them when a request is sent 
