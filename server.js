@@ -21,7 +21,7 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 const app = express();
 
 //handle CORS
-const allowedOrigins = ['null'];
+const allowedOrigins = ['null', 'https://b-asmala.github.io/sum-tube']; //[local host, a client hosted on my github]
 
 app.use((req, res, next) => {
     const origin = req.headers.origin;
