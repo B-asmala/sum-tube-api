@@ -67,7 +67,6 @@ app.get('/sum/:id', async (req, res)=>{
 
         //split the words
         subtitles = subtitles.split(' ');
-        console.log(subtitles.length);
 
         //summarize the subtitles
         //if the video is too long, make subtitles into chunks of 2000 words.
@@ -92,7 +91,6 @@ app.get('/sum/:id', async (req, res)=>{
 
             summed += summedChunk;
 
-            console.log(i);
             i += chunkLimit;
         }
 
